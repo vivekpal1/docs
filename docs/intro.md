@@ -12,19 +12,19 @@ ShastraOS is currently in the development process. Aiming for first release in 2
 
 ### Why ShastraOS?
 ShastraOS is an open source and it's decentralized 
-feature which cares your privacy and security makes it  trustworthy.As we all know that most of the linux distros are not user friendly but ShastraOS comes with userfriendly interface and an user friendly customized Gnome Desktop.
+feature which cares your privacy and security makes it  trustworthy. As we all know that most of the linux distros are not user friendly but ShastraOS comes with userfriendly interface and an user friendly customized Gnome Desktop.
 Also it has decentralized packages repo and decentralized backups which makes it unique.  
 
 ## Features
-Features of ShastraOS includes:
-1)-Decentralization:-
-   a)-User data on blockchain.
-    b)-User packages repo on blockchain.
-2)-Portability:-
-    a)-User data and backups syncranize with a pvt key
-    b)-Backups - general info, packages data, files and docs.
-3)- Compitablity :-
-    :: Mainly three uptodate kernel versions -
-    a)- LTS
-    b)- Nvidia
-    c) -Stable                   
+Features of ShastraOS includes: <br/> <br/>
+1)Decentralization:- <br/>
+    a)-User data on blockchain. <br/>
+    b)-User packages repo on blockchain. <br/> <br/>
+2)Portability:- <br/>
+    a)-User data and backups syncranize with a pvt key <br/>
+    b)-Backups - general info, packages data, files and docs. <br/><br/>
+3)Compitablity :- <br/>
+     Mainly three uptodate releases with stable kernel - <br/>
+    a)- LTS <br/>
+    b)- Nvidia <br/>
+    c) -Stable <br/>
