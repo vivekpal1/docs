@@ -11,17 +11,20 @@ ShastraOS is an open-source Arch Linux-based distribution for the 21st century. 
 ShastraOS is currently in the development process. Aiming for first release in 2022.
 
 ### Why ShastraOS?
-:-Completely yours
-:-Customize it in your way
-:-We need a new OS for a new generation
-:-Play your games with a smooth experience
-:-Privacy and Security are your right
+ShastraOS is an open source and it's decentralized 
+feature which cares your privacy and security makes it  trustworthy.As we all know that most of the linux distros are not user friendly but ShastraOS comes with userfriendly interface and an user friendly customized Gnome Desktop.
+Also it has decentralized packages repo and decentralized backups which makes it unique.  
 
 ## Features
-Not windows ofcourse
-Mac is fully centralized and closed
-Most linux distros are not user frendly, and all of them have many problems
-None of the OS have decentralzed packages repo and decentralized backups
-And ofcourse UI 😍
-This all features in one OS i.e Shastra OS
-
+Features of ShastraOS includes:
+1)-Decentralization:-
+   a)-User data on blockchain.
+    b)-User packages repo on blockchain.
+2)-Portability:-
+    a)-User data and backups syncranize with a pvt key
+    b)-Backups - general info, packages data, files and docs.
+3)- Compitablity :-
+    :: Mainly three uptodate kernel versions -
+    a)- LTS
+    b)- Nvidia
+    c) -Stable                   
