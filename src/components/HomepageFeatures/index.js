@@ -24,8 +24,14 @@ const FeatureList = [
     ),
   },
   {
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-  },
+    title: 'All your needed applications are here.',
+    Svg: require('@site/static/img/desktopgirl.svg').default,
+    description: (
+      <>
+        ShastraOS comes with it's own packages repositories, which gives you choice to download your favorite applications from thousands of packages.
+      </>
+    ),
+  }
 ];
 
 function Feature({Svg, title, description}) {
