@@ -9,29 +9,29 @@ const FeatureList = [
     description: (
       <>
         Install ShastraOS easily with ShastraOS Live Calamres Installer.
+        ShastraOS live installer gives you capablity to explore your desktop OS, before it being installed to your hardware.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Get started with your privacy focused dececntralized OS',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        ShastraOS is privacy focused decentralized OS, gives you your personal workstation feeling.
+        With ShastraOS backups you will able to take backup of your private data and will safely hosted on IPFS.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'All your needed applications are here.',
+    Svg: require('@site/static/img/desktopgirl.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        ShastraOS comes with it's own packages repositories, which gives you choice to download your favorite applications from thousands of packages.
       </>
     ),
-  },
+  }
 ];
 
 function Feature({Svg, title, description}) {
