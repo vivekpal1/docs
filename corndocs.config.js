@@ -11,5 +11,5 @@ module.exports = {
       usesMain: false,
     },
   },
-  color: colors.amber,
+  color: colors.violet,
 };
