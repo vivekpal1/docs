@@ -65,9 +65,9 @@ function Sidebar() {
               Built with ❤️ and{" "}
               <a
                 target="_blank"
-                href="https://github.com/dishwasher-detergent/CornDocs"
+                href="https://github.com/shastra-os"
               >
-                CornDocs
+                ShastraOS
               </a>
             </p>
           </div>

@@ -4,10 +4,10 @@ module.exports = {
   darkMode: true,
   googleAnalytics: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_KEY,
   project: {
-    name: "CornDocs",
-    url: "https://www.corndocs.com",
+    name: "ShastraOS",
+    url: "https://www.shastraos.co",
     github: {
-      repo: "https://github.com/dishwasher-detergent/CornDocs",
+      repo: "https://github.com/shastra-os/",
       usesMain: false,
     },
   },
