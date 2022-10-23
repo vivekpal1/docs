@@ -1,0 +1,16 @@
+{
+  "title": "Wiki - Basics",
+  "description": "5 minutes to learn the most important Docusaurus concepts.",
+  "slug": "/category/wiki---basics",
+  "permalink": "/docs/category/wiki---basics",
+  "navigation": {
+    "previous": {
+      "title": "About ShastraOS",
+      "permalink": "/docs/intro"
+    },
+    "next": {
+      "title": "Create a Page",
+      "permalink": "/docs/tutorial-basics/create-a-page"
+    }
+  }
+}
