@@ -29,9 +29,9 @@ class MyDocument extends Document {
           <link
             rel="stylesheet"
             href="https://unpkg.com/dracula-prism/dist/css/dracula-prism.css"
-          ></link>
+          />
         </Head>
-        <body>
+        <body className="h-screen text-slate-900 dark:text-white">
           <Main />
           <NextScript />
         </body>

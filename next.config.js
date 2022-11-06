@@ -6,7 +6,7 @@ const nextConfig = {
   },
   webpack: function (config, { isServer }) {
     if (isServer) {
-      require("./scripts/sitemap-generator");
+      require("./scripts/sitemap-generator.mjs");
     }
     return config;
   },

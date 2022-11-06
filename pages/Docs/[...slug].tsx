@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import DisplayChildren from "../../components/display/Children";
 import DisplayDoc from "../../components/display/Doc";
-import Loading from "../../components/loading";
+import NProgress from "nprogress";
 
 function Doc() {
   const router = useRouter();
@@ -21,10 +21,20 @@ function Doc() {
     }
   }, [router]);
 
+  useEffect(() => {
+    NProgress.configure({ showSpinner: false });
+
+    if (isLoading) {
+      NProgress.start();
+    } else {
+      NProgress.done();
+    }
+  }, [isLoading]);
+
   if (!data) {
     return (
-      <div className="flex h-full w-full flex-col items-center justify-center gap-4">
-        <h1 className="rounded-md bg-primary-300/20 p-4 text-9xl font-black text-primary-500">
+      <div className="flex h-full w-full flex-col items-center justify-center gap-4 py-16">
+        <h1 className="rounded-xl bg-primary-200/20 p-4 text-9xl font-black text-primary-500">
           404
         </h1>
         <div className="text-center text-xl text-slate-900 dark:text-white">
@@ -41,17 +51,12 @@ function Doc() {
 
   return (
     <>
-      {!isLoading ? (
-        data.children ? (
+      {!isLoading &&
+        (data.children ? (
           <DisplayChildren data={data} />
         ) : (
           <DisplayDoc data={data} />
-        )
-      ) : (
-        <div className="w-full py-6">
-          <Loading />
-        </div>
-      )}
+        ))}
     </>
   );
 }

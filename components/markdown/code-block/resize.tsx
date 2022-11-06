@@ -14,26 +14,22 @@ const Responsive = ({ children, size, dark }: ResponsiveProps) => {
     if (iframe.current) {
       // @ts-ignore
       let the_height = iframe.current.contentWindow.document.body.scrollHeight;
+      if (height - 2 == the_height) return;
       setHeight(the_height + 10);
     }
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      calcHeight();
-    }, 250);
-  }, []);
-
   return (
     <div
       style={{ height: height }}
-      className="mb-2 flex max-h-[48rem] items-center justify-center overflow-hidden rounded-md border border-slate-300 bg-slate-100 transition-all dark:border-slate-700 dark:bg-slate-800"
+      className="dotty mb-2 flex max-h-[48rem] items-center justify-center overflow-hidden rounded-xl border border-slate-300 bg-slate-100 transition-all dark:border-slate-700 dark:bg-slate-900"
     >
       <div
         style={{ maxWidth: size + "px" }}
-        className="h-full w-full overflow-y-auto overflow-x-hidden bg-white transition-all dark:bg-slate-900"
+        className="h-full w-full overflow-y-auto overflow-x-hidden bg-white transition-all dark:border-slate-700 dark:bg-slate-900"
       >
         <iframe
+          onLoad={() => calcHeight()}
           ref={iframe}
           aria-label="component preview"
           title="component preview"
