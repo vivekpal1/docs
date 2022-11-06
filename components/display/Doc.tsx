@@ -4,24 +4,29 @@ import CodeBlock from "../markdown/code-block";
 import { H2, H3, H4 } from "../markdown/heading";
 import Breadcrumb from "../breadcrumb/breadcrumb";
 import { useRouter } from "next/router";
-import Loading from "../loading";
 import ArticleNavigation from "../layout/docs/article/navigation";
 import ArticleSidebar from "../layout/docs/article/sidebar";
 import ArticleFooter from "../layout/docs/article/footer";
-import corndocsConfig from "../../corndocs.config";
+import corndocsConfig from "../../corndocs.config.js";
 import { motion, AnimatePresence } from "framer-motion";
+import { Github } from "lucide-react";
 
 const DynamicDocument = (c: any) =>
-  dynamic(() => import(`../../_posts/${c}.mdx`), {
+  dynamic(() => import(`../../_posts/${c}`), {
     ssr: false,
-    loading: Loading,
   });
+
+interface HeadingsProps {
+  text: string;
+  level: number;
+}
 
 interface DocProps {
   data: {
     custom: {
+      truePath: string;
       path: string;
-      headings: string[];
+      headings: HeadingsProps[];
       slug: string;
       data: {
         description: string;
@@ -40,33 +45,33 @@ const components = {
 };
 
 const variants = {
-  hidden: { opacity: 0, y: 12 },
-  enter: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -12 },
+  hidden: { opacity: 1 },
+  enter: { opacity: 1 },
+  exit: { opacity: 1 },
 };
 
 const DisplayDoc = ({ data }: DocProps) => {
   const { custom } = data;
 
-  const DocumentContent = DynamicDocument(custom.path);
+  const DocumentContent = DynamicDocument(custom.truePath);
   const router = useRouter();
 
   return (
     <AnimatePresence>
       <motion.div
-        variants={variants} // Pass the variant object into Framer Motion
-        initial="hidden" // Set the initial state to variants.hidden
-        animate="enter" // Animated state to variants.enter
-        exit="exit" // Exit state (used later) to variants.exit
-        transition={{ type: "spring" }} // Set the transition to linear
+        variants={variants}
+        initial="hidden"
+        animate="enter"
+        exit="exit"
+        transition={{ duration: 0.75, type: "spring" }}
         className="pl-2"
       >
-        <main className="dark:bg-slate-900">
+        <main>
           <div className="container mx-auto py-6">
             <div className="grid grid-cols-12 gap-4">
               <div className="col-span-12">
-                <div className="grid grid-cols-12 lg:gap-16 xl:gap-8">
-                  <div className="col-span-12 lg:col-span-9">
+                <div className="flex grid-cols-12 flex-col-reverse xl:grid xl:gap-8">
+                  <div className="col-span-12 xl:col-span-9">
                     <Breadcrumb data={router.query.slug} />
                     <article className="prose prose-slate w-full max-w-none dark:prose-invert">
                       {/* @ts-ignore */}
@@ -77,7 +82,24 @@ const DisplayDoc = ({ data }: DocProps) => {
                     <ArticleNavigation />
                   </div>
                   {custom.headings.length > 0 && (
-                    <ArticleSidebar data={custom.headings} />
+                    <ArticleSidebar data={custom.headings}>
+                      {corndocsConfig.project.github.repo ? (
+                        <div className="mt-4 border-t border-slate-300 pt-4 dark:border-slate-700 dark:text-white">
+                          <a
+                            className="flex items-center gap-2 text-xs font-bold"
+                            target="_blank"
+                            href={`${corndocsConfig.project.github.repo}/edit/${
+                              corndocsConfig.project.github.usesMain
+                                ? "main"
+                                : "master"
+                            }/_posts/${custom.path}.mdx`}
+                          >
+                            <Github size={12} />
+                            <span>Edit on GitHub</span>
+                          </a>
+                        </div>
+                      ) : null}
+                    </ArticleSidebar>
                   )}
                 </div>
               </div>
@@ -86,12 +108,14 @@ const DisplayDoc = ({ data }: DocProps) => {
           <ArticleFooter>
             {corndocsConfig.project.github.repo ? (
               <a
+                className="flex items-center gap-2 text-sm font-bold"
                 target="_blank"
                 href={`${corndocsConfig.project.github.repo}/edit/${
                   corndocsConfig.project.github.usesMain ? "main" : "master"
                 }/_posts/${custom.path}.mdx`}
               >
-                Edit on GitHub
+                <Github size={16} />
+                <span>Edit on GitHub</span>
               </a>
             ) : null}
           </ArticleFooter>
